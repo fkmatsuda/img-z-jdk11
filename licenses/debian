@@ -1,0 +1,63 @@
+License information
+This page presents the opinion of some debian-legal contributors on how certain licenses follow the Debian Free Software Guidelines (DFSG). Most of these opinions were formed in discussions on the debian-legal mailing list in response to questions from potential package maintainers or licensors. We welcome enquiries from maintainers considering particular licenses, but we encourage most maintainers to use one of the common licenses: GPL, LGPL, modified BSD, or Artistic.
+
+Software packaged for Debian is normally classified into one of four categories. There is free software (main), non-free software (non-free), free software which depends on some non-free software (contrib) and software which cannot be redistributed (not included). Debian Policy section 2 explains exactly how the DFSG are applied to the archive. If in doubt, maintainers are asked to email debian-legal about licenses, including the text of any new license into the body of the email. You may find it helpful to search the list archives for the name of the license before emailing lists with questions about it. If you still email questions, please link to some of the previous relevant discussions.
+
+debian-legal is advisory. The actual decision-makers are the ftpmasters and the package maintainers. However, if one cannot convince most of the generally liberal debian-legal contributors, it's probably not clear that the software follows the DFSG.
+
+Because the actual decision-makers are the ftpmasters and the package maintainers, it is a very good idea to check the ftpmasters REJECT FAQ and search site:packages.debian.org for any license that you doubt, to look for other examples of its handling for debian. (The search works because package copyright files are published on packages.debian.org as plain text.)
+
+Other lists are maintained by the Free Software Foundation (FSF) and the Open Source Initiative (OSI). Please note however, that the Debian project decides on particular packages rather than licenses in abstract, and the lists are general explanations. It is possible to have a package containing software under a "free" license with some other aspect that makes it non-free. Sometimes, debian-legal comments on a license in abstract, not applied to any particular software. While these discussion can suggest possible problems, often no firm answers can be reached until some specific software is examined.
+
+You may contact debian-legal if you have questions or comments about these summaries.
+
+Licenses currently found in Debian main include:
+
+GNU General Public License (common)
+GNU Lesser General Public License (common)
+GNU Library General Public License (common)
+Modified BSD License (common)
+Perl Artistic license (common)
+Apache License
+Expat/MIT-style licenses
+zlib-style licenses
+LaTeX Project Public License
+Python Software Foundation License
+Ruby's License
+PHP License
+W3C Software Notice and License
+OpenSSL License
+Sleepycat License
+Common UNIX Printing System License Agreement
+vhf Public License
+"No problem Bugroff" license
+Unmodified BSD License (also known as the original or 4-clause BSD license. It included an advertising requirement and is now deprecated even by the BSD project.)
+public domain (not a license, strictly speaking)
+IBM Public License Version 1.0
+If you use one of these licenses, please try to use the latest version and edit no more than necessary, unless indicated otherwise. Licenses marked (common) can be found in /usr/share/common-licenses on a Debian system.
+
+Licenses currently found in the non-free archive section include:
+
+NVIDIA Software License
+SCILAB License
+Limited Use Software License Agreement
+Non-Commercial License
+FastCGI / Open Market License
+LaTeX2HTML License
+Open Publication License
+Free Document Dissemination License
+AT&T Open Source License
+Apple Public Source License
+Aladdin Free Public License
+Generic amiwm License (an XV-style license)
+Digital License Agreement
+Moria/Angband license
+Unarj License
+id Software License
+qmail terms
+Please do not upload software under these licenses to the main archive.
+
+Additionally, some software is not distributable (for example, has no license at all), even in non-free.
+
+Work in Progress
+For help with interpreting the DFSG, you should check the DFSG FAQ that answers some common questions about the DFSG and how to analyse software.
