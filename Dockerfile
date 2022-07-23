@@ -20,25 +20,19 @@
 FROM node:lts-bullseye-slim
 ARG TARGETPLATFORM
 ENV DOWNLOAD_URL=invalid
-ENV ZULU_TAR=invalid
+ENV ZULU_DEB=invalid
 RUN case "${TARGETPLATFORM}" in \
-         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.58.15-ca-jdk11.0.16-linux_x64.tar.gz               \
-                            ZULU_TAR="zulu11.58.15-ca-jdk11.0.16-linux_x64"        ;; \
-         "linux/arm64")     DOWNLOAD_URL=https://cdn.azul.com/zulu-embedded/bin/zulu11.58.15-ca-jdk11.0.16-linux_aarch64.tar.gz           \
-                            ZULU_TAR="zulu11.58.15-ca-jdk11.0.16-linux_aarch64"    ;; \
+         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.58.15-ca-jdk11.0.16-linux_amd64.deb               \
+                            ZULU_DEB="zulu11.58.15-ca-jdk11.0.16-linux_amd64.deb"        ;; \
+         "linux/arm64")     DOWNLOAD_URL=https://cdn.azul.com/zulu-embedded/bin/zulu11.58.15-ca-jdk11.0.16-linux_arm64.deb           \
+                            ZULU_DEB="zulu11.58.15-ca-jdk11.0.16-linux_arm64.deb"    ;; \
     esac && \
     apt-get update -qq && apt-get upgrade -qq --autoremove --purge && \
-    apt-get install -qq wget git java-common libasound2 libxi6 libxtst6 && \
+    apt-get install -qq wget git java-common libasound2 libxi6 libxtst6 wait-for-it libxrender1 libfontconfig1 && \
     apt-get clean && \
-    mkdir -p /opt/maven /opt/jdk && \
     wget ${DOWNLOAD_URL} && \
-    tar -C /opt/jdk -xzf ./${ZULU_TAR}.tar.gz && \
-    mv /opt/jdk/${ZULU_TAR} /opt/jdk/zulu && \
-    rm ./${ZULU_TAR}.tar.gz && \
-    wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz && \
-    tar -C /opt/maven/ -xzf ./apache-maven-3.8.4-bin.tar.gz && \
-    rm ./apache-maven-3.8.4-bin.tar.gz
+    dpkg -i ./${ZULU_DEB} && \
+    rm ./${ZULU_DEB}
 
-ENV MAVEN_HOME="/opt/maven/apache-maven-3.8.4"
-ENV JAVA_HOME="/opt/jdk/zulu"
-ENV PATH="$JAVA_HOME/bin:$PATH:$MAVEN_HOME/bin"
+ENV JAVA_HOME="/usr/lib/jvm/zulu11"
+ENV PATH="$JAVA_HOME/bin:$PATH"
