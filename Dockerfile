@@ -22,10 +22,10 @@ ARG TARGETPLATFORM
 ENV DOWNLOAD_URL=invalid
 ENV ZULU_TAR=invalid
 RUN case "${TARGETPLATFORM}" in \
-         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.54.23-ca-jdk11.0.14-linux_x64.tar.gz               \
-                            ZULU_TAR="zulu11.54.23-ca-jdk11.0.14-linux_x64"        ;; \
-         "linux/arm64")     DOWNLOAD_URL=https://cdn.azul.com/zulu-embedded/bin/zulu11.54.23-ca-jdk11.0.14-linux_aarch64.tar.gz           \
-                            ZULU_TAR="zulu11.54.23-ca-jdk11.0.14-linux_aarch64"    ;; \
+         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.58.15-ca-jdk11.0.16-linux_x64.tar.gz               \
+                            ZULU_TAR="zulu11.58.15-ca-jdk11.0.16-linux_x64"        ;; \
+         "linux/arm64")     DOWNLOAD_URL=https://cdn.azul.com/zulu-embedded/bin/zulu11.58.15-ca-jdk11.0.16-linux_aarch64.tar.gz           \
+                            ZULU_TAR="zulu11.58.15-ca-jdk11.0.16-linux_aarch64"    ;; \
     esac && \
     apt-get update -qq && apt-get upgrade -qq --autoremove --purge && \
     apt-get install -qq wget git java-common libasound2 libxi6 libxtst6 && \
