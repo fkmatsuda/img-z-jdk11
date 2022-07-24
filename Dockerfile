@@ -41,4 +41,4 @@ RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.
 
 ENV MAVEN_HOME="/usr/local/maven"
 ENV JAVA_HOME="/usr/lib/jvm/zulu11"
-ENV PATH="$JAVA_HOME/bin:$MAVEM_HOME/bin:$PATH"
+ENV PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH"
