@@ -22,7 +22,7 @@ ARG TARGETPLATFORM
 ENV DOWNLOAD_URL=invalid
 ENV ZULU_DEB=invalid
 RUN case "${TARGETPLATFORM}" in \
-         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/https://cdn.azul.com/zulu/bin/zulu11.66.15-ca-jdk11.0.20-linux_amd64.deb             && \
+         "linux/amd64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.66.15-ca-jdk11.0.20-linux_amd64.deb             && \
                             ln -s /usr/lib/jvm/zulu-11-amd64 /java-home                                                              && \
                             ZULU_DEB="zulu11.66.15-ca-jdk11.0.20-linux_amd64.deb"        ;; \
          "linux/arm64")     DOWNLOAD_URL=https://cdn.azul.com/zulu/bin/zulu11.66.15-ca-jdk11.0.20-linux_arm64.deb      && \
