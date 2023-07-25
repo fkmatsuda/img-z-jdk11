@@ -36,10 +36,10 @@ RUN case "${TARGETPLATFORM}" in \
     dpkg -i ./${ZULU_DEB} && \
     rm ./${ZULU_DEB}
 
-RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz && \
-    tar -xzf apache-maven-3.8.6-bin.tar.gz && \
-    mv apache-maven-3.8.6 /usr/local/maven && \
-    rm apache-maven-3.8.6-bin.tar.gz
+RUN wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz && \
+    tar -xzf apache-maven-3.9.3-bin.tar.gz && \
+    mv apache-maven-3.9.3 /usr/local/maven && \
+    rm apache-maven-3.9.3-bin.tar.gz
 
 ENV MAVEN_HOME="/usr/local/maven"
 ENV JAVA_HOME="/java-home"
